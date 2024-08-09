@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * Implements hook_help().
+ */
+function dhl_location_finder_help($route_name, $route_match) {
+  switch ($route_name) {
+    case 'help.page.dhl_location_finder':
+      return '<p>' . t('The DHL Location Finder module allows you to interact with the DHL Location Finder API to retrieve and filter location data. This module filters out locations that do not operate on weekends and those with odd-numbered street addresses.') . '</p>'
+        . '<h2>' . t('Overview') . '</h2>'
+        . '<p>' . t('To use this module, navigate to the provided form at <em>/dhl-location-finder</em> in your Drupal site. Enter the required fields and submit the form to retrieve the list of DHL locations that meet the criteria. The results will be displayed in YAML format.') . '</p>'
+        . '<h2>' . t('Configuration') . '</h2>'
+        . '<p>' . t('This module does not require additional configuration. Ensure the API key is correctly set in the code, and the HTTP client service is available.') . '</p>'
+        . '<h2>' . t('Troubleshooting') . '</h2>'
+        . '<p>' . t('If you encounter issues, ensure that the API key is valid, and the API endpoint is reachable. Check that the necessary dependencies are available and correctly configured in your Drupal environment.') . '</p>';
+  }
+}

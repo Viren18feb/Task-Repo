@@ -1,0 +1,14 @@
+services:
+  dhl_location_finder.api_service:
+    class: Drupal\dhl_location_finder\Service\DhlLocationApiClient
+    arguments: ['@http_client']
+
+  dhl_location_finder.filter_service:
+    class: Drupal\dhl_location_finder\Service\DhlLocationFilterService
+
+  dhl_location_finder.yaml_formatter:
+    class: Drupal\dhl_location_finder\Service\DhlLocationYamlFormatter
+
+  dhl_location_finder.country_service:
+    class: '\Drupal\dhl_location_finder\Service\CountryService'
+    arguments: ['@country_manager']
